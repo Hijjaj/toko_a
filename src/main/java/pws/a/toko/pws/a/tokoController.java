@@ -4,6 +4,7 @@
  */
 package pws.a.toko.pws.a;
 
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +23,8 @@ public class tokoController {
     BarangJpaController actrl = new BarangJpaController();
     
     @RequestMapping("/getAll")
-    public String getAll(int id){
-        data = actrl.findBarang(id);
-        return data.getNama();
+    public List<Barang> viewAll(){
+        return actrl.findBarangEntities();
     }
     
     
